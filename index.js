@@ -15,11 +15,8 @@ app.get('/', function (req, res) {
 });
 app.post("/api/fileanalyse", upload.single("upfile"), (req, res) => {
   let {originalname: name, mimetype: type, size} = req.file
-  console.log(req.file)
   res.json({name, type, size})
 })
-
-
 
 const port = process.env.PORT || 3000;
 app.listen(port, function () {
